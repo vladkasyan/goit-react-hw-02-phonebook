@@ -28,7 +28,7 @@ export class App extends Component {
  
   addContact = contact => {
     
-    this.checkDublicate()
+    this.checkDublicate(contact)
 
     this.setState(prevState => ({
       contacts: [{ id: nanoid(), ...contact }, ...prevState.contacts],
@@ -66,7 +66,7 @@ export class App extends Component {
         <PhoneBook onSubmit={this.addContact} />
 
         <h2>Contacts</h2>
-        {this.state.contacts.length > 0 ? (<Filter value={filter} ChangeFilter={this.filterchange} />) : (
+        {this.state.contacts.length > 0 ? (<Filter value={filter} ChangeFilter={this.filterChange} />) : (
           <div>Your phonebook is empty. Add first contact!</div>
         )}
         {this.state.contacts.length > 0 && (

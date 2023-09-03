@@ -18,8 +18,8 @@ export class PhoneBook extends Component {
   SubmitForm = event => {
     event.preventDefault();
     
-    this.props.onSubmit({ name: this.state.name, number: this.state.number });
-
+    this.props.onSubmit(this.state);
+    // name: this.state.name, number: this.state.number 
     this.reset();
   };
 
